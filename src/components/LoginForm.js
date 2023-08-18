@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
-import Visibility from "@mui/material/Visibility";
-import VisibilityOff from "@mui/material/VisibilityOff";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import InputAdornment from "@mui/material/InputAdornment";
 import InputLabel from "@mui/material/InputLabel";
-import { OutlinedInput } from "@mui/material/OutlinedInput";
+import OutlinedInput from "@mui/material/OutlinedInput";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import AuthContext from "../auth/AuthContext";

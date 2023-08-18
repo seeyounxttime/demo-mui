@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import api from "../data/fetchData";
-import JobCard from "./components/JobCard";
+import JobCard from "../components/JobCard";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import Pagination from "@mui/material/Pagination";
 import { styled } from "@mui/material/styles";
 import { useSearchParams } from "react-router-dom";
 import { Typography } from "@mui/material";
-import Stack from "@mui/material/Stack";
 
 const CenterPagination = styled(Pagination)(({ theme }) => ({
   ul: {
