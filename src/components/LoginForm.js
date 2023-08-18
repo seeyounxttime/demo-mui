@@ -13,7 +13,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 const style = {
-  bgColor: "background.paper",
+  bgcolor: "background.paper",
   display: "flex",
   flexDirection: "column",
   width: "300px",
@@ -24,7 +24,7 @@ const style = {
 
 function LoginForm({ callback }) {
   const [username] = useState("minhtri");
-  const [password] = useState("123");
+  const [password] = useState("123456");
 
   const auth = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
@@ -33,7 +33,7 @@ function LoginForm({ callback }) {
     event.preventDefault();
   };
   const handleLogin = () => {
-    auth.signin(username, callback);
+    auth.singin(username, callback);
   };
 
   return (
@@ -49,13 +49,13 @@ function LoginForm({ callback }) {
         sx={{ m: 1 }}
       />
       <FormControl sx={{ m: 1 }} variant="outlined">
-        <InputLabel htmlFor="outlined-adorment-password">Password</InputLabel>
+        <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
         <OutlinedInput
           disabled
-          id="outlined-adorment-password"
+          id="outlined-adornment-password"
           type={showPassword ? "text" : "password"}
           value={password}
-          endAdorment={
+          endAdornment={
             <InputAdornment position="end">
               <IconButton
                 aria-label="toggle password visibility"
@@ -67,7 +67,7 @@ function LoginForm({ callback }) {
               </IconButton>
             </InputAdornment>
           }
-          label="password"
+          label="Password"
         />
       </FormControl>
       <Button

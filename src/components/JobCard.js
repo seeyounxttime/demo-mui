@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
-// import AuthContext from "../auth/AuthContext";
-import { useLocation, Link } from "react-router-dom";
+import AuthContext from "../auth/AuthContext";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import SkillsPaper from "./SkillsPaper";
 import { styled } from "@mui/material/styles";
 
@@ -18,21 +21,20 @@ const CardStyle = styled(Card)(({ theme }) => ({
   minWidth: "270px",
   height: "320px",
   margin: "auto",
-  backgroundColor: theme.palette.primary.light,
+  backgroundColor: "theme.palette.primary.main",
 }));
 
 function JobCard({ description, skills, id, title }) {
-  // const auth = useContext(AuthContext);
-  // const navigate = useNavigate();
+  const auth = useContext(AuthContext);
+  const navigate = useNavigate();
   let location = useLocation();
-  // const handleClick = (event) => {
-  //   if (auth.user) {
-  //     navigate(`/job/${id}`);
-  //   } else {
-  //     navigate("/login");
-  //   }
-  // };
-
+  const hanleClick = (event) => {
+    if (auth.user) {
+      navigate(`/job/${id}`);
+    } else {
+      navigate("/login");
+    }
+  };
   return (
     <CardStyle ariant="outlined">
       <Stack
@@ -46,27 +48,28 @@ function JobCard({ description, skills, id, title }) {
           <Typography
             variant="subtitle1"
             component="div"
-            sx={{ color: (theme) => theme.palette.common.white }}
+            sx={{ color: "theme.palette.common.white" }}
           >
             {title}
           </Typography>
           <Divider />
           <SkillsPaper skills={skills} />
-          <Typography sx={{ color: (theme) => theme.palette.common.white }}>
+          <Typography sx={{ color: "theme.palette.common.white" }}>
             {description}
           </Typography>
         </CardContent>
         <Button
           variant="contained"
           component={Link}
-          to={`job/${id}`}
+          to={`/job/${id}`}
           state={{ backgroundLocation: location }}
-          sx={{ witdh: "130px", backgroundColor: "#df9e0b" }}
+          sx={{ width: "130px", backgroundColor: "#df9e0b" }}
         >
           Learn More
         </Button>
-        {/* <Link to={`job/${id}`} state={{backgroundLocation:}}
-        <div>Learn More</div></Link> */}
+        {/* <Link to={`/job/${id}`} state={{ backgroundLocation: location }}>
+            <div>Learn More</div>
+          </Link> */}
       </Stack>
     </CardStyle>
   );

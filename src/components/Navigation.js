@@ -21,7 +21,10 @@ const Search = styled("div")(({ theme }) => ({
   marginRight: theme.spacing(2),
   marginLeft: 0,
   width: "100%",
-  [theme.breakpoints.up("sm")]: { marginLeft: theme.spacing(3), width: "auto" },
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: theme.spacing(3),
+    width: "auto",
+  },
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -53,11 +56,11 @@ function Navigation() {
   const q = searchParams.get("q");
   const navigate = useNavigate();
 
-  const handleClickLogin = (event) => {
+  const handlClickLogin = (event) => {
     navigate("/login");
   };
 
-  const handleClickLogout = (event) => {
+  const handlClickLogout = (event) => {
     auth.signout(() => {
       navigate("/");
     });
@@ -74,7 +77,7 @@ function Navigation() {
     <Box>
       <AppBar
         position="static"
-        sx={{ backgroundColor: (theme) => theme.palette.primary.light }}
+        sx={{ backgroundColor: "theme.palette.primary.main" }}
       >
         <Toolbar>
           <Typography
@@ -99,7 +102,7 @@ function Navigation() {
                 name="q"
                 placeholder="Search"
                 defaultValue={q ?? undefined}
-                inputProps={{ "aria-label": "search" }}
+                inputProps={{ "arial-label": "search" }}
               />
             </Search>
           </Box>
@@ -107,7 +110,7 @@ function Navigation() {
           {auth?.user ? (
             <>
               <Button
-                onClick={handleClickLogout}
+                onClick={handlClickLogout}
                 variant="contained"
                 startIcon={<LogoutIcon />}
               >
@@ -120,7 +123,7 @@ function Navigation() {
             </>
           ) : (
             <Button
-              onClick={handleClickLogin}
+              onClick={handlClickLogin}
               variant="contained"
               startIcon={<LoginIcon />}
             >

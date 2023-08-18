@@ -5,7 +5,7 @@ import AuthContext from "./AuthContext";
 function AuthProvider({ children }) {
   let [user, setUser] = useState(null);
 
-  let signin = (newUser, callback) => {
+  let singin = (newUser, callback) => {
     return Auth.signin(() => {
       setUser(newUser);
       callback();
@@ -19,8 +19,7 @@ function AuthProvider({ children }) {
     });
   };
 
-  let value = { user, signin, signout };
-
+  let value = { user, singin, signout };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

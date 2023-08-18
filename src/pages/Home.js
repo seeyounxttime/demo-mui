@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
-import api from "../data/fetchData";
+import React, { useEffect, useState } from "react";
 import JobCard from "../components/JobCard";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
+import api from "../data/fetchData";
 import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 import { useSearchParams } from "react-router-dom";
 import { Typography } from "@mui/material";
 
-const CenterPagination = styled(Pagination)(({ theme }) => ({
+const CentterPagination = styled(Pagination)(({ theme }) => ({
   ul: {
     justifyContent: "center",
   },
@@ -29,11 +30,11 @@ function Home() {
     };
     fetch();
   }, [page, q]);
+
   return (
     <Container sx={{ p: 3 }} maxWidth="lg">
       {jobs.length > 0 ? (
         <>
-          {" "}
           <Grid container spacing={3}>
             {jobs.map((job) => (
               <Grid key={job.id} item lg={3} md={4} sm={6} xs={12}>
@@ -46,7 +47,7 @@ function Home() {
               </Grid>
             ))}
           </Grid>
-          <CenterPagination
+          <CentterPagination
             sx={{ marginTop: "15px" }}
             count={pagesTotal}
             color="primary"

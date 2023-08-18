@@ -1,5 +1,5 @@
 import React from "react";
-import { CssBaseline } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
 import {
   alpha,
   createTheme,
@@ -56,7 +56,7 @@ const GREY = {
 
 function ThemeProvider({ children }) {
   const themeOptions = {
-    pallet: {
+    palette: {
       primary: PRIMARY,
       secondary: SECONDARY,
       success: SUCCESS,
@@ -76,14 +76,16 @@ function ThemeProvider({ children }) {
     shape: { borderRadius: 8 },
   };
 
-  const theme = createTheme(themeOptions)
+  const theme = createTheme(themeOptions);
 
-  return <div>
-    <MUIThemeProvider theme={theme}>
-      <CssBaseline/>
-      {children}
-    </MUIThemeProvider>
-  </div>;
+  return (
+    <div>
+      <MUIThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </MUIThemeProvider>
+    </div>
+  );
 }
 
 export default ThemeProvider;

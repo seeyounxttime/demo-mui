@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -13,8 +13,8 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: { xs: "90%", md: "600" },
-  bgColor: "background.paper",
+  width: { xs: "90%", md: 600 },
+  bgcolor: "background.paper",
   borderRadius: 2,
   border: "none",
 };
@@ -31,12 +31,11 @@ function JobDetailModal() {
       setJob(data);
     };
     fetchData();
-  }, []);
+  });
 
   const handleClose = () => {
     navigate(-1);
   };
-
   return (
     <div>
       <Modal
@@ -50,15 +49,15 @@ function JobDetailModal() {
             sx={{
               border: "none",
               boxShadow: 0,
-              backgroundColor: (theme) => theme.palette.primary.light,
-              color: (theme) => theme.palette.common.white,
+              backgroundColor: "theme.palette.primary.main",
+              color: "theme.palette.common.white",
             }}
           >
             <CardContent>
               <Typography variant="h5" component="div">
                 {job?.title}
               </Typography>
-              <SkillsPaper skills={job?.skill} />
+              <SkillsPaper skills={job?.skills} />
               <Typography>{job?.description}</Typography>
               <Typography variant="h6" component="div">
                 City: {job?.city}

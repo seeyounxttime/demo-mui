@@ -12,7 +12,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  bgColor: "background.paper",
+  bgcolor: "background.paper",
   borderRadius: 2,
   boxShadow: 24,
   border: "none",
@@ -29,7 +29,7 @@ function LoginModal() {
       <Modal
         open={true}
         onClose={handleClose}
-        aria-labelledly="modal-modal-title"
+        aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>

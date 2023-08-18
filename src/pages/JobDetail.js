@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import RequireAuth from "../auth/RequireAuth";
 import api from "../data/fetchData";
 import { useParams } from "react-router-dom";
@@ -13,7 +13,6 @@ function JobDetail() {
     };
     fetch();
   }, [id]);
-
   return (
     <div>
       <RequireAuth callback={() => {}}>
@@ -22,4 +21,5 @@ function JobDetail() {
     </div>
   );
 }
+
 export default JobDetail;
