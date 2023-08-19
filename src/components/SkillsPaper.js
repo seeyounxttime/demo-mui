@@ -3,7 +3,10 @@ import Paper from "@mui/material/Paper";
 import Chip from "@mui/material/Chip";
 import { styled } from "@mui/material/styles";
 
-const ListItem = styled("li")(({ theme }) => ({ margin: "1px" }));
+const ListItem = styled("li")(({ theme }) => ({
+  margin: "1px",
+}));
+
 function SkillsPaper({ skills }) {
   return (
     <Paper
@@ -15,7 +18,7 @@ function SkillsPaper({ skills }) {
         p: 0.5,
         m: 0,
         boxShadow: 0,
-        backgroundColor: "theme.palette.primary.main",
+        backgroundColor: (theme) => theme.palette.primary.light,
       }}
       component="ul"
     >

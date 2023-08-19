@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
@@ -9,7 +9,7 @@ function Layout() {
     <Stack
       sx={{
         minHeight: "100vh",
-        backgroundColor: "theme.palette.primary.main",
+        backgroundColor: (theme) => theme.palette.primary.main,
       }}
     >
       <Navigation />

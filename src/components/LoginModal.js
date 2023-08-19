@@ -1,10 +1,6 @@
-import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import LoginForm from "./LoginForm";
 import { useNavigate } from "react-router-dom";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
 import Box from "@mui/material/Box";
 
 const style = {

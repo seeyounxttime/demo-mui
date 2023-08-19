@@ -4,7 +4,6 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import api from "../data/fetchData";
 import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 import { useSearchParams } from "react-router-dom";
 import { Typography } from "@mui/material";

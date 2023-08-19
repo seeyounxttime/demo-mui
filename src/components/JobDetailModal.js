@@ -31,7 +31,7 @@ function JobDetailModal() {
       setJob(data);
     };
     fetchData();
-  });
+  }, []);
 
   const handleClose = () => {
     navigate(-1);
@@ -49,8 +49,8 @@ function JobDetailModal() {
             sx={{
               border: "none",
               boxShadow: 0,
-              backgroundColor: "theme.palette.primary.main",
-              color: "theme.palette.common.white",
+              backgroundColor: (theme) => theme.palette.primary.light,
+              color: (theme) => theme.palette.common.white,
             }}
           >
             <CardContent>
