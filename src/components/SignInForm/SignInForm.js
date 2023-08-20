@@ -19,8 +19,8 @@ const SignInForm = (props) => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    username: "PhucDong",
-    password: "helloWorld@1014",
+    username: "MinhTri",
+    password: "123456",
   });
 
   // Handle Change input
