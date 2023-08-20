@@ -18,7 +18,7 @@ function Home() {
   const [jobs, setJobs] = useState([]);
   const [pagesTotal, setPagesTotal] = useState(0);
   const [page, setPage] = useState(1);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const q = searchParams.get("q");
 
   useEffect(() => {

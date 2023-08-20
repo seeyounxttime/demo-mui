@@ -25,13 +25,13 @@ function JobCard({ description, skills, id, title }) {
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
   let location = useLocation();
-  const hanleClick = (event) => {
-    if (auth.user) {
-      navigate(`/job/${id}`);
-    } else {
-      navigate("/login");
-    }
-  };
+  // const hanleClick = (event) => {
+  //   if (auth.user) {
+  //     navigate(`/job/${id}`);
+  //   } else {
+  //     navigate("/login");
+  //   }
+  // };
   return (
     <CardStyle ariant="outlined">
       <Stack

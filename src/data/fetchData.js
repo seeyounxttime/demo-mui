@@ -22,17 +22,13 @@ async function getJobs(page, q = null) {
     return { jobs: jobs.slice((page - 1) * 6, page * 6 - 1), pagesTotal: 2 };
   }
 }
-
 async function getJob(id) {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve();
     }, 100);
   });
-
   await promise;
-
-  return jobs.find((job) => job.id == id);
+  return jobs.find((job) => job.id === id);
 }
-
-export default { getJobs, getJob };
+export default (getJob, getJobs);
