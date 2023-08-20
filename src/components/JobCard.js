@@ -22,8 +22,8 @@ const CardStyle = styled(Card)(({ theme }) => ({
 }));
 
 function JobCard({ description, skills, id, title }) {
-  const auth = useContext(AuthContext);
-  const navigate = useNavigate();
+  // const auth = useContext(AuthContext);
+  // const navigate = useNavigate();
   let location = useLocation();
   // const hanleClick = (event) => {
   //   if (auth.user) {
